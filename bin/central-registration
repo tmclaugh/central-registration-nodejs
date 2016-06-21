@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+"use strict";
+
+// Module Dependencies
+var app = require('../lib/app');
+var http = require('http');
+
+//Create HTTP server
+var port = '8080';
+app.set('port', port);
+var server = http.createServer(app).listen(port);
+

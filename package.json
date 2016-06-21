@@ -1,0 +1,24 @@
+{
+  "name": "central-registration-nodejs",
+  "version": "0.0.1",
+  "description": "Manage resources in my cloud environment",
+  "main": "bin/central-registration",
+  "dependencies": {
+    "aws-sdk": "^2.4.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmclaugh/central-registration-nodejs.git"
+  },
+  "author": "Tom McLaughlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmclaugh/central-registration-nodejs/issues"
+  },
+  "homepage": "https://github.com/tmclaugh/central-registration-nodejs#readme"
+}
