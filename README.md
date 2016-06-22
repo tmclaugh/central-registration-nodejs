@@ -1,4 +1,4 @@
-central-registration-ruby
+central-registration-nodejs
 ===
 
 Manages stuff.
