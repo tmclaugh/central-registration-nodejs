@@ -23,6 +23,6 @@ Return a DNS record.
 `curl -s -H "Content-Type: application/json" -X GET -d '{"HostedZone":"example.com.", "rr":{"Type":"A"}}' http://localhost:8080/api/v1/dns/i-deadbeef.example.com.`
 
 ### DELETE: /api/v1/dns/:rrName
-Delete a DNS record
+Delete a DNS record.
 
 `curl -s -H "Content-Type: application/json" -X DELETE -d '{"HostedZone":"example.com.", "rr":{"Type":"A", "TTL":10, "ResourceRecords":[{"Value": "127.0.0.1"}]}}' http://localhost:8080/api/v1/dns/i-deadbeef.example.com.`
