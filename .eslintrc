@@ -4,7 +4,8 @@
     "browser": false,
     "node": true,
     "mocha": true,
-    "builtin": true
+    "builtin": true,
+    "es6": true
   },
   "globals": {},
   "rules": {
@@ -34,6 +35,7 @@
       2,
       "except-parens"
     ],
+    "no-const-assign": 2,
     "no-debugger": 2,
     "no-empty": 2,
     "no-eval": 2,
