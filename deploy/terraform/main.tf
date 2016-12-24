@@ -80,6 +80,26 @@ output "autoscaling_group_vpc_zone_identifier" {
   value = "${module.central_registration_nodejs.autoscaling_group_vpc_zone_identifier}"
 }
 
+output "iam_role_arn" {
+  value = "${module.central_registration_nodejs.iam_role_arn}"
+}
+
+output "iam_role_name" {
+  value = "${module.central_registration_nodejs.iam_role_name}"
+}
+
+output "iam_instance_profile_arn" {
+  value = "${module.central_registration_nodejs.iam_instance_profile_arn}"
+}
+
+output "iam_instance_profile_name" {
+  value = "${module.central_registration_nodejs.iam_instance_profile_name}"
+}
+
+output "iam_instance_profile_roles" {
+  value = "${module.central_registration_nodejs.iam_instance_profile_roles}"
+}
+
 output "security_group_id" {
   value = "${module.central_registration_nodejs.security_group_id}"
 }
