@@ -6,7 +6,6 @@
 * variables
 */
 variable "account_id" {}
-variable "domain" {}
 variable "instance_key_name" {}
 variable "aws_region" {}
 variable "subnet_type" {}
@@ -28,7 +27,6 @@ module "central_registration_nodejs" {
   asg_max_size          = "${var.asg_max_size}"
   asg_desired_capacity  = "${var.asg_desired_capacity}"
   instance_key_name     = "${var.instance_key_name}"
-  domain                = "${var.domain}"
 }
 
 

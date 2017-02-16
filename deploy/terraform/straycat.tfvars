@@ -13,7 +13,6 @@ terragrunt = {
 
 account_id = "straycat"
 aws_region = "us-east-1"
-domain = "straycat.dhs.org"
 subnet_type = "private"
 instance_key_name = "straycat-tmclaugh-threatstack"
 asg_min_size = 0
