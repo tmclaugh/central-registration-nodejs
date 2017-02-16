@@ -3,27 +3,29 @@
 */
 
 /*
+* data
+*/
+data "terraform_remote_state" "aws_vpc" {
+  backend = "s3"
+  config = {
+    bucket  = "${var.domain}-${var.account_id}-terraform"
+    key     = "aws_vpc.tfstate"
+    region  = "${var.aws_region}"
+  }
+}
+
+/*
 * variables
 */
+variable "account_id" {}
 variable "domain" {}
-variable "environment" {}
 variable "instance_key_name" {}
 variable "aws_region" {}
+variable "subnet_type" {}
 variable "asg_min_size" {}
 variable "asg_max_size" {}
 variable "asg_desired_capacity" {}
 
-/*
-* data
-*/
-data "terraform_remote_state" "infrastructure" {
-  backend = "s3"
-  config = {
-    bucket  = "${var.domain}-${var.environment}-terraform"
-    key     = "infrastructure/terraform.tfstate"
-    region  = "${var.aws_region}"
-  }
-}
 
 /*
 * resources
@@ -31,13 +33,14 @@ data "terraform_remote_state" "infrastructure" {
 module "central_registration_nodejs" {
   source = "../../../tf_straycat_svc"
   svc_name              = "central-registration"
+  account_id            = "${var.account_id}"
   aws_region            = "${var.aws_region}"
+  subnet_type           = "${var.subnet_type}"
   asg_min_size          = "${var.asg_min_size}"
   asg_max_size          = "${var.asg_max_size}"
   asg_desired_capacity  = "${var.asg_desired_capacity}"
   instance_key_name     = "${var.instance_key_name}"
   domain                = "${var.domain}"
-  environment           = "${var.environment}"
 }
 
 
