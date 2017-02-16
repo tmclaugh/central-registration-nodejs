@@ -31,7 +31,7 @@ variable "asg_desired_capacity" {}
 * resources
 */
 module "central_registration_nodejs" {
-  source = "../../../tf_straycat_svc"
+  source                = "github.com/tmclaugh/tf_straycat_svc"
   svc_name              = "central-registration"
   account_id            = "${var.account_id}"
   aws_region            = "${var.aws_region}"
