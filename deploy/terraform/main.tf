@@ -18,7 +18,7 @@ variable "security_group_service_ingress" { type = "map" }
 /*
 * resources
 */
-module "central_registration_nodejs" {
+module "svc" {
   source                = "github.com/tmclaugh/tf_straycat_svc"
   svc_name              = "${var.svc_name}"
   account_id            = "${var.account_id}"
@@ -36,70 +36,70 @@ module "central_registration_nodejs" {
 * outputs
 */
 output "launch_config_id" {
-  value = "${module.central_registration_nodejs.launch_config_id}"
+  value = "${module.svc.launch_config_id}"
 }
 
 output "autoscaling_group_id" {
-  value = "${module.central_registration_nodejs.autoscaling_group_id}"
+  value = "${module.svc.autoscaling_group_id}"
 }
 
 output "autoscaling_group_name" {
-  value = "${module.central_registration_nodejs.autoscaling_group_name}"
+  value = "${module.svc.autoscaling_group_name}"
 }
 
 output "autoscaling_group_availability_zones" {
-  value = "${module.central_registration_nodejs.autoscaling_group_availability_zones}"
+  value = "${module.svc.autoscaling_group_availability_zones}"
 }
 
 output "autoscaling_group_min_size" {
-  value = "${module.central_registration_nodejs.autoscaling_group_min_size}"
+  value = "${module.svc.autoscaling_group_min_size}"
 }
 
 output "autoscaling_group_max_size" {
-  value = "${module.central_registration_nodejs.autoscaling_group_max_size}"
+  value = "${module.svc.autoscaling_group_max_size}"
 }
 
 output "autoscaling_group_desired_capacity" {
-  value = "${module.central_registration_nodejs.autoscaling_group_desired_capacity}"
+  value = "${module.svc.autoscaling_group_desired_capacity}"
 }
 
 output "autoscaling_group_launch_configuration" {
-  value = "${module.central_registration_nodejs.autoscaling_group_launch_configuration}"
+  value = "${module.svc.autoscaling_group_launch_configuration}"
 }
 
 output "autoscaling_group_vpc_zone_identifier" {
-  value = "${module.central_registration_nodejs.autoscaling_group_vpc_zone_identifier}"
+  value = "${module.svc.autoscaling_group_vpc_zone_identifier}"
 }
 
 output "iam_role_arn" {
-  value = "${module.central_registration_nodejs.iam_role_arn}"
+  value = "${module.svc.iam_role_arn}"
 }
 
 output "iam_role_name" {
-  value = "${module.central_registration_nodejs.iam_role_name}"
+  value = "${module.svc.iam_role_name}"
 }
 
 output "iam_instance_profile_arn" {
-  value = "${module.central_registration_nodejs.iam_instance_profile_arn}"
+  value = "${module.svc.iam_instance_profile_arn}"
 }
 
 output "iam_instance_profile_name" {
-  value = "${module.central_registration_nodejs.iam_instance_profile_name}"
+  value = "${module.svc.iam_instance_profile_name}"
 }
 
 output "iam_instance_profile_roles" {
-  value = "${module.central_registration_nodejs.iam_instance_profile_roles}"
+  value = "${module.svc.iam_instance_profile_roles}"
 }
 
 output "security_group_id" {
-  value = "${module.central_registration_nodejs.security_group_id}"
+  value = "${module.svc.security_group_id}"
 }
 
 output "security_group_vpc_id" {
-  value = "${module.central_registration_nodejs.security_group_vpc_id}"
+  value = "${module.svc.security_group_vpc_id}"
 }
 
 output "security_group_name" {
-  value = "${module.central_registration_nodejs.security_group_name}"
+  value = "${module.svc.security_group_name}"
 }
 
