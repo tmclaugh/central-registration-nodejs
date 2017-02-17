@@ -5,6 +5,7 @@
 /*
 * variables
 */
+variable "svc_name" {}
 variable "account_id" {}
 variable "instance_key_name" {}
 variable "aws_region" {}
@@ -19,7 +20,7 @@ variable "security_group_service_ingress" { type = "map" }
 */
 module "central_registration_nodejs" {
   source                = "github.com/tmclaugh/tf_straycat_svc"
-  svc_name              = "central-registration"
+  svc_name              = "${var.svc_name}"
   account_id            = "${var.account_id}"
   aws_region            = "${var.aws_region}"
   subnet_type           = "${var.subnet_type}"
