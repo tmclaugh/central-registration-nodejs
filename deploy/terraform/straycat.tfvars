@@ -18,3 +18,11 @@ instance_key_name = "straycat-tmclaugh-threatstack"
 asg_min_size = 0
 asg_max_size = 0
 asg_desired_capacity = 0
+
+security_group_service_ingress = {
+  from_port = 8080
+  to_port = 8080
+  protocol = "tcp"
+  security_group_id_access = "all"
+}
+

@@ -12,7 +12,7 @@ variable "subnet_type" {}
 variable "asg_min_size" {}
 variable "asg_max_size" {}
 variable "asg_desired_capacity" {}
-
+variable "security_group_service_ingress" { type = "map" }
 
 /*
 * resources
@@ -27,6 +27,7 @@ module "central_registration_nodejs" {
   asg_max_size          = "${var.asg_max_size}"
   asg_desired_capacity  = "${var.asg_desired_capacity}"
   instance_key_name     = "${var.instance_key_name}"
+  security_group_service_ingress_internal = "${var.security_group_service_ingress}"
 }
 
 
@@ -95,14 +96,6 @@ output "security_group_id" {
 
 output "security_group_vpc_id" {
   value = "${module.central_registration_nodejs.security_group_vpc_id}"
-}
-
-output "security_group_ingress" {
-  value = "${module.central_registration_nodejs.security_group_ingress}"
-}
-
-output "security_group_egress" {
-  value = "${module.central_registration_nodejs.security_group_egress}"
 }
 
 output "security_group_name" {
