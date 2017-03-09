@@ -4,7 +4,7 @@ terragrunt = {
     backend = "s3"
     config {
       encrypt = "true"
-      bucket  = "straycat.dhs.org-straycat-terraform"
+      bucket  = "straycat-dhs-org-straycat-terraform"
       key     = "svc-central-booking.tfstate"
       region  = "us-east-1"
     }
